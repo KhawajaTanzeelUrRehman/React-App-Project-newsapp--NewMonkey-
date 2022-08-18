@@ -1,0 +1,236 @@
+ import React, { Component } from 'react'
+import NewsItem from './NewsItem'
+ 
+export class News extends Component {
+    articles = [
+    {
+      "source": { "id": null, "name": "Investor's Business Daily" },
+      "author": "Investor's Business Daily",
+      "title": "Dow Jones Futures: Market Rally Retreats, BBBY Stock Dives On This; Time To Bite Into Apple Stock? | Investor's Business Daily - Investor's Business Daily",
+      "description": "The major indexes fell Wednesday, despite slightly dovish Fed minutes.",
+      "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-rally-retreats-bbby-stock-falls-time-to-bite-into-apple-stock/",
+      "urlToImage": "https://www.investors.com/wp-content/uploads/2022/03/Stock-applelogocart-01-adobe.jpg",
+      "publishedAt": "2022-08-18T10:19:00Z",
+      "content": "Dow Jones futures rose slightly Thursday morning, along with S&amp;P 500 futures and Nasdaq futures, with Cisco earnings and BBBY stock news in focus.\r\nXThe stock market rally pulled back Wednesday a… [+9229 chars]"
+    },
+    {
+      "source": { "id": "cnn", "name": "CNN" },
+      "author": "Kathleen Magramo, CNN",
+      "title": "Children's remains found in suitcases bought by family at auction, New Zealand police say - CNN",
+      "description": "New Zealand police have launched a homicide investigation after the remains of two children were found in suitcases bought by a family at an online auction, police said Thursday.",
+      "url": "https://www.cnn.com/2022/08/18/world/new-zealand-children-remains-suitcase-intl-hnk/index.html",
+      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220818050316-new-zealand-suitcase-bought-at-storage-facility-intl-hnk-super-tease.jpg",
+      "publishedAt": "2022-08-18T09:27:00Z",
+      "content": "(CNN)New Zealand police have launched a homicide investigation after the remains of two children were found in suitcases bought by a family at an online auction, police said Thursday.\r\nIn a statement… [+1566 chars]"
+    },
+    {
+      "source": { "id": null, "name": "CNBC" },
+      "author": "Su-Lin Tan",
+      "title": "Asia-Pacific markets trade lower after Wall Street cools following Fed minutes - CNBC",
+      "description": "July minutes from the U.S. Federal Open Market Committee pointed to \"little evidence inflation pressures were subsiding\" at the time of the meeting.",
+      "url": "https://www.cnbc.com/2022/08/18/asia-pacific-markets-poised-for-lower-open-after-wall-street-cools-following-fed-minutes.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/107008573-1643602320155-gettyimages-1237690039-JAPAN_STOCK.jpeg?v=1659569846&w=1920&h=1080",
+      "publishedAt": "2022-08-18T08:48:00Z",
+      "content": "The Governor of the Reserve Bank of New Zealand Adrian Orr said there wouldn't be a \"hard landing\" for house prices as a consequence of the bank's interest rate hikes but some \"belt tightening\" would… [+1257 chars]"
+    },
+    {
+      "source": { "id": "the-verge", "name": "The Verge" },
+      "author": "Tom Warren",
+      "title": "Embracer Group's game buying spree includes rights to Lord of the Rings and Hobbit - The Verge",
+      "description": "Embracer is acquiring Limited Run Games, Tripwire, and the rights to Lord of the Rings and Hobbit. The buying spree comes months after Embracer nabbed Tomb Raider.",
+      "url": "https://www.theverge.com/2022/8/18/23311082/embracer-group-acquisition-lord-of-the-rings-hobbit-limited-run-games-tripwire",
+      "urlToImage": "https://cdn.vox-cdn.com/thumbor/b_vJtvcoUDanBz1XxYvzZryo-Rw=/481x0:4320x2010/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23893554/S1_EpisodicStill_RPAZ_S1_FG_00250307_Still003_R1.jpg",
+      "publishedAt": "2022-08-18T07:25:34Z",
+      "content": "Limited Run Games, Tripwire, and more acquired by Embracer Group today\r\nEmbracer Group has embarked on an acquisition spree today that includes Limited Run Games, Tripwire Interactive, and the IP rig… [+2973 chars]"
+    },
+    {
+      "source": { "id": "cbs-news", "name": "CBS News" },
+      "author": null,
+      "title": "Kabul mosque bombing kills at least 10, including prominent cleric - CBS News",
+      "description": "At least 27 others were wounded. An eyewitness said the explosion was carried out by a suicide bomber.",
+      "url": "https://www.cbsnews.com/news/kabul-mosque-attack-afghanistan/",
+      "urlToImage": "https://assets1.cbsnewsstatic.com/hub/i/r/2022/08/18/c02439e9-fe1a-4ae5-9a83-c8b553dfc71c/thumbnail/1200x630/8ca9f1976de6b5ead3842f080918c78e/ap22230142616232.jpg",
+      "publishedAt": "2022-08-18T06:12:00Z",
+      "content": "Kabul, Afghanistan — A bombing at a mosque in the Afghan capital of Kabul during evening prayers on Wednesday killed at least 10 people, including a prominent cleric, and wounded at least 27, an eyew… [+3010 chars]"
+    },
+    {
+      "source": { "id": null, "name": "New York Times" },
+      "author": "Trish Bendix",
+      "title": "Trevor Noah on Liz Cheney’s ‘Bigly’ Loss - The New York Times",
+      "description": "Noah said her defeat in a primary was “the chance for Wyoming Republicans to declare whether they stood with Liz Cheney or with Donald Trump, and they answered bigly.”",
+      "url": "https://www.nytimes.com/2022/08/18/arts/television/trevor-noah-liz-cheney.html",
+      "urlToImage": "https://static01.nyt.com/images/2022/08/18/arts/18latenight/18latenight-facebookJumbo.png",
+      "publishedAt": "2022-08-18T05:15:47Z",
+      "content": "You know how everyones been talking about the great resignation where people are just like leaving their jobs after the pandemic? Well, if you hate your job and fear confrontation, theres a new thing… [+1102 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Iihf.com" },
+      "author": null,
+      "title": "Czechs stun U.S., go to semis - IIHF",
+      "description": "Underdogs rally for impressive win",
+      "url": "https://www.iihf.com/en/events/2022/wm20/news/38327/czechs_stun_u_s_advance_to_semis",
+      "urlToImage": "https://blob.iihf.com/iihf-media/iihfmvc/media/2022/wm20aug/news/24-usa-cze-news.jpg",
+      "publishedAt": "2022-08-18T05:14:54Z",
+      "content": "The Americans got just the start they wanted, jumping into a 1-0 at 12:03 with a bit of good fortune. A simple clear-in bounced improperly off the side boards and the puck came out by the faceoff dot… [+2260 chars]"
+    },
+    {
+      "source": { "id": "politico", "name": "Politico" },
+      "author": null,
+      "title": "NY-10 debate is a lion's den for Daniel Goldman - POLITICO",
+      "description": "Strong polling and a coveted endorsement — along with a nod from former President Donald Trump — had opponents circling former federal prosecutor Dan Goldman Wednesday.",
+      "url": "https://www.politico.com/news/2022/08/17/ny-10-debate-daniel-goldman-00052587",
+      "urlToImage": "https://static.politico.com/2a/bd/9c7a8c3c4f17beef1543d77734c9/https-delivery.gettyimages.com/downloads/1187383080",
+      "publishedAt": "2022-08-18T03:35:06Z",
+      "content": "We should know enough by now that we cant take Donald Trump at his word, and that he likes to meddle in elections, Goldman said in response to a question about the endorsement posed by debate hosts P… [+2816 chars]"
+    },
+    {
+      "source": { "id": "techcrunch", "name": "TechCrunch" },
+      "author": "Kirsten Korosec",
+      "title": "Dodge unveils Charger EV concept that is faster and louder than a Hellcat - TechCrunch",
+      "description": "Dodge revealed Wednesday an EV concept that looks — and even sounds — like the gas-powered Charger muscle car that will be discontinued next year. The two-door Dodge Charger Daytona SRT Concept — the Daytona name a nod to its gas-powered ancestor’s 200 mph NA…",
+      "url": "https://techcrunch.com/2022/08/17/dodge-unveils-charger-ev-concept-that-is-faster-and-louder-than-a-hellcat/",
+      "urlToImage": "https://techcrunch.com/wp-content/uploads/2022/08/dodge-charger-ev-side.jpg?w=600",
+      "publishedAt": "2022-08-18T03:12:33Z",
+      "content": "Dodge revealed Wednesday an EV concept that looks and even sounds like the gas-powered Charger muscle car that will be discontinued next year.\r\nThe two-door Dodge Charger Daytona SRT Concept the Dayt… [+3387 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Omaha World-Herald" },
+      "author": "Julie Anderson World-Herald Staff Writer",
+      "title": "Douglas County child dies from suspected 'brain-eating amoeba' - Omaha World-Herald",
+      "description": "A child died this week from a suspected infection, which may have been acquired while swimming in the Elkhorn River, according to the Douglas County Health Department.",
+      "url": "https://omaha.com/news/local/douglas-county-child-dies-from-suspected-brain-eating-amoeba/article_e44c5f72-1e77-11ed-a8d1-27b72538869f.html",
+      "urlToImage": "https://bloximages.newyork1.vip.townnews.com/omaha.com/content/tncms/assets/v3/editorial/e/44/e44c5f72-1e77-11ed-a8d1-27b72538869f/62fd7bb4b6989.preview.jpg?crop=1402%2C736%2C5%2C33&resize=1200%2C630&order=crop%2Cresize",
+      "publishedAt": "2022-08-18T02:45:36Z",
+      "content": "A Douglas County child died this week from a suspected infection with the amoeba Naegleria fowleri, which may have been acquired while swimming Sunday in the Elkhorn River, according to the Douglas C… [+3465 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Yahoo Entertainment" },
+      "author": "Cassandra Negley",
+      "title": "WNBA playoffs 2022: No. 7 Liberty steal Game 1 against reigning champion Sky, 98-91, in Chicago - Yahoo Sports",
+      "description": "The Liberty need one more win to advance to the semifinals in a close WNBA playoff opener.",
+      "url": "https://sports.yahoo.com/wnba-playoffs-2022-no-7-liberty-steal-game-1-against-reigning-champion-sky-98-91-in-chicago-020325750.html",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/p20a9JjVfAouOh9uyEDwlA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2022-08/62210a10-1e9b-11ed-bff7-7b09e9a1d370",
+      "publishedAt": "2022-08-18T02:03:00Z",
+      "content": "The No. 7 seed New York Liberty upset the No. 2 Chicago Sky, 98-91, to take Game 1 of the first-round series at Wintrust Arena in Chicago on Wednesday. The Sky are the reigning champions after taking… [+3968 chars]"
+    },
+    {
+      "source": { "id": "usa-today", "name": "USA Today" },
+      "author": "Danny Segura",
+      "title": "UFC welterweights predict Kamaru Usman vs. Leon Edwards 2 - MMA Junkie",
+      "description": "Kamaru Usman or Leon Edwards? UFC welterweights give their prediction.",
+      "url": "https://mmajunkie.usatoday.com/lists/ufc-278-kamaru-usman-vs-leon-edwards-2-welterweight-peer-fighter-predictions",
+      "urlToImage": "https://mmajunkie.usatoday.com/wp-content/uploads/sites/91/2015/12/kamaru-usman-leon-edwards-ufc-on-fox-17.jpg?w=640&h=420&crop=1",
+      "publishedAt": "2022-08-18T02:02:00Z",
+      "content": "“Everyone always has a chance when you step in the octagon, that’s always there. I think if Leon Edwards fights smart, he has the tools to win. He’s a long athlete with good distance, he’s southpaw, … [+382 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Entertainment Tonight" },
+      "author": "Miguel A. Melendez‍",
+      "title": "Brad Pitt and Angelina Jolie's 2016 Jet Incident: All the Revelations From the FBI Report - Entertainment Tonight",
+      "description": "Jolie alleged a number of things, including that Pitt 'grabbed her by her head' and 'pushed her into a bathroom wall.'",
+      "url": "https://www.etonline.com/brad-pitt-and-angelina-jolies-2016-jet-incident-all-the-revelations-from-the-fbi-report-189286",
+      "urlToImage": "https://www.etonline.com/sites/default/files/styles/max_1280x720/public/images/2022-08/Brad-Pitt-Angelina-Jolie-Getty-488820097.jpg?h=7d2724c1&itok=V2r1ayxa",
+      "publishedAt": "2022-08-18T01:58:09Z",
+      "content": "ET has obtained the FBI's 53-page report that details assault allegations on board a private aircraft involving Angelina Jolie, Brad Pitt and their children. The heavily redacted report states, among… [+10623 chars]"
+    },
+    {
+      "source": { "id": "business-insider", "name": "Business Insider" },
+      "author": "Erin Snodgrass",
+      "title": "Trump considers releasing footage of FBI raid at Mar-a-Lago: CNN - Business Insider",
+      "description": "Some of the former president's allies have suggested the footage could help fire up his base ahead of a possible 2024 campaign, according to CNN.",
+      "url": "https://www.businessinsider.com/cnn-trump-considers-releasing-footage-fbi-raid-mar-a-lago-2022-8",
+      "urlToImage": "https://i.insider.com/62fd8cadec781d00186891f0?width=1200&format=jpeg",
+      "publishedAt": "2022-08-18T01:19:44Z",
+      "content": "Former President Donald Trump is considering making public some of the surveillance footage of the FBI executing a search warrant at his Mar-a-Lago resort earlier this month in hopes of using it to f… [+2482 chars]"
+    },
+    {
+      "source": { "id": "usa-today", "name": "USA Today" },
+      "author": "Drew Favakeh, USA TODAY",
+      "title": "Georgia man indicted on 10 counts of homicide for Memorial Day weekend boat crash that killed 5 - USA TODAY",
+      "description": "A grand jury indicted Mark Christopher Stegall, 45, with 10 counts of first-degree homicide by vessel for the Memorial Day weekend boat collision.",
+      "url": "https://www.usatoday.com/story/news/nation/2022/08/17/georgia-memorial-weekend-boat-crash-indicted-10-counts-homicide/10353613002/",
+      "urlToImage": "https://www.gannett-cdn.com/presto/2022/06/01/NSMN/2ae86e04-b82e-4e39-8a21-a50367931316-60854206_10218797474390873_8716890702828535808_n.jpg?auto=webp&crop=959,540,x0,y0&format=pjpg&width=1200",
+      "publishedAt": "2022-08-18T01:15:31Z",
+      "content": "SAVANNAH, Ga. — A Georgia man was indicted on homicide by vessel charges after a Memorial Day weekend boat collision that killed five people.\r\nMark Stegall was indicted on 10 counts of first-degree h… [+972 chars]"
+    },
+    {
+      "source": { "id": null, "name": "New York Post" },
+      "author": "Elizabeth Rosner, Allie Griffin",
+      "title": "Former Trump Organization CFO Allen Weisselberg expected to plead guilty to tax charges - New York Post ",
+      "description": "The indictment against Weisselberg was the first charge brought by former Manhattan DA Cy Vance last year amid a probe into Trump’s business empire finances.",
+      "url": "https://nypost.com/2022/08/17/trump-org-cfo-allen-weisselberg-expected-to-plead-guilty-to-tax-charges/",
+      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2022/08/allen-weisselberg-pleads-guilty-310.jpg?quality=75&strip=all&w=1024",
+      "publishedAt": "2022-08-18T01:12:00Z",
+      "content": "Allen Weisselberg, the former chief financial officer for the Trump Organization, reached a plea deal and is expected to cooperate with investigators in a probe into the former president’s finances, … [+1736 chars]"
+    },
+    {
+      "source": { "id": null, "name": "CBS Sports" },
+      "author": "",
+      "title": "NBA schedule: LeBron vs. Curry on opening night, Ben Simmons' Philly return among 10 early matchups to circle - CBS Sports",
+      "description": "Also, Zion Williamson's return vs. Brooklyn is can't-miss TV",
+      "url": "https://www.cbssports.com/nba/news/nba-schedule-lebron-vs-curry-on-opening-night-ben-simmons-philly-return-among-10-early-matchups-to-circle/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2021/08/17/ec97d9b1-1de0-469e-9130-c025fd8e557b/thumbnail/1200x675/ece48964702a758810029dcd78a9ea15/lakers-warriors-lebron-james-stephen-curry.jpg",
+      "publishedAt": "2022-08-18T01:03:00Z",
+      "content": "The 2022-23 NBA schedule was released on Wednesday (what portion of it wasn't previously leaked, anyway), and naturally, we're all running through it circling the matchups that stick out. Here are 10… [+4023 chars]"
+    },
+    {
+      "source": { "id": null, "name": "YouTube" },
+      "author": null,
+      "title": "NASA's Artemis I Could Change The Future Of Moon Travel - NBC News",
+      "description": "Artemis I, the most powerful rocket ever, will launch a critical uncrewed test flight on August 29 for a 42-day mission orbiting the moon. If the flight goes...",
+      "url": "https://www.youtube.com/watch?v=tDJOJ7Uhh4w",
+      "urlToImage": "https://i.ytimg.com/vi/tDJOJ7Uhh4w/maxresdefault.jpg",
+      "publishedAt": "2022-08-18T01:00:22Z",
+      "content": null
+    },
+    {
+      "source": { "id": null, "name": "WPLG Local 10" },
+      "author": "Terrell Forney, David Dwork",
+      "title": "‘Godspeed, brother’: Miami-Dade officer dies 2 days after being shot by robbery suspect - WPLG Local 10",
+      "description": "The Miami-Dade Police Department is mourning one of its own.",
+      "url": "https://www.local10.com/news/local/2022/08/18/godspeed-brother-miami-dade-officer-dies-2-days-after-being-shot-by-robbery-suspect/",
+      "urlToImage": "https://res.cloudinary.com/graham-media-group/image/upload/f_auto/q_auto/c_thumb,w_700/v1/media/gmg/F4674IRRVFBQ5JBSOTBHTQRTIM.jpeg?_a=ATAK9d60",
+      "publishedAt": "2022-08-18T00:47:21Z",
+      "content": "MIAMI The Miami-Dade Police Department is mourning one of its own.\r\nOfficials confirmed Wednesday night that 29-year-old Detective Cesar Echy Echaverry had died.\r\nHe was rushed to Jackson Memorial Ho… [+1793 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Deadline" },
+      "author": "Tom Tapp",
+      "title": "Dr. Oz Finally Explains Viral “Crudité” Shopping Video Mistakes: “I Was Exhausted” - Deadline",
+      "description": "For the first time since an old video of him shopping for crudité went viral, Pennsylvania Senate candidate Dr. Mehmet Oz has spoken out. “I’m at Wegner’s,” Oz says in the video, apparently mixing the names of two separate grocery chains, Wegmans and Redner’s…",
+      "url": "https://deadline.com/2022/08/dr-oz-explains-crudite-video-1235094867/",
+      "urlToImage": "https://deadline.com/wp-content/uploads/2022/08/Screen-Shot-2022-08-17-at-2.38.16-PM.png?w=1024",
+      "publishedAt": "2022-08-18T00:11:00Z",
+      "content": "For the first time since an old video of him shopping for crudité went viral, Pennsylvania Senate candidate Dr. Mehmet Oz has spoken out.\r\n“I’m at Wegner’s,” Oz says in the video, apparently mixing t… [+2850 chars]"
+    }
+  ]
+     constructor() {
+         super();
+         this.state = {
+             articles: this.articles,
+             loading: false
+         };
+     ;
+    }
+   render() {
+     return (
+         <div className='container my-3'>
+             <h2>NewsMonkey - Top Headlines</h2>
+             <div className="row">
+                 <div className="col-md-4">
+                     <NewsItem title="Circket" description="Hello to the future"/>
+                 </div>
+                 <div className="col-md-4">
+                     <NewsItem title="Circket" description="Hello to the future"/>
+                 </div>
+                 <div className="col-md-4">
+                     <NewsItem title="Circket" description="Hello to the future"/>
+                 </div>
+             </div>
+       </div>
+     )
+   }
+ }
+ 
+ export default News
+ 
